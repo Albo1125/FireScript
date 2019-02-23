@@ -24,7 +24,7 @@ Please view the license. Improvements and new feature additions are very welcome
 * [CitizenFX.Core](https://github.com/citizenfx/fivem)
 
 ## Video
-[Click here] (https://youtu.be/8veCv0OEkUQ)
+[Click here](https://youtu.be/8veCv0OEkUQ)
 
 ## Screenshots
 ![FireScript](https://i.imgur.com/jAXE0gc.png)
