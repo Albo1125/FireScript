@@ -1,6 +1,6 @@
 -- Manifest
 resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
-name 'FireScripot'
+name 'FireScript'
 description 'Allows you to simulate fires and smoke.'
 author 'Albo1125 (https://www.youtube.com/albo1125)'
 version 'v1.3.0'
