@@ -55,7 +55,7 @@ namespace FireScript
                 pos.Z += 1;
                 expl_asset.StartNonLoopedAtCoord("scr_trev3_trailer_expolsion", pos);
             }
-            if (Function.Call<int>(Hash.GET_INTERIOR_AT_COORDS, Position.X, Position.Y, Position.Z) == 0)
+            if (API.GetInteriorAtCoords(Position.X, Position.Y, Position.Z) == 0)
             {
                 InteriorSmokePTFX = asset.CreateEffectAtCoord("scr_env_agency3b_smoke", Position, scale: 5, startNow: true);
             }            

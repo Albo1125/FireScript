@@ -24,7 +24,7 @@ namespace FireScript
         public async Task Start()
         {
             Active = true;
-            this.FlameID = Function.Call<int>(Hash.START_SCRIPT_FIRE, Position.X, Position.Y, Position.Z, 25, false);
+            this.FlameID = API.StartScriptFire(Position.X, Position.Y, Position.Z, 25, false);
 
             ParticleEffectsAsset asset = new ParticleEffectsAsset("scr_trevor3");
             await asset.Request(1000);
@@ -38,9 +38,9 @@ namespace FireScript
 
         public void Remove()
         {
-            Function.Call(Hash.REMOVE_SCRIPT_FIRE, FlameID);
+            API.RemoveScriptFire(FlameID);
 
-            Function.Call(Hash.STOP_FIRE_IN_RANGE, Position.X, Position.Y, Position.Z, 20);
+            API.StopFireInRange(Position.X, Position.Y, Position.Z, 20);
             FlamePTFX.RemovePTFX();
             Active = false;
         }
@@ -48,9 +48,9 @@ namespace FireScript
         public void Manage()
         {
 
-            if (FlamePTFX != null && Function.Call<bool>(Hash.DOES_PARTICLE_FX_LOOPED_EXIST, FlamePTFX.Handle))
+            if (FlamePTFX != null && API.DoesParticleFxLoopedExist(FlamePTFX.Handle))
             {
-                int numberInRange = Function.Call<int>(Hash.GET_NUMBER_OF_FIRES_IN_RANGE, Position.X, Position.Y, Position.Z, 1.5f);
+                int numberInRange = API.GetNumberOfFiresInRange(Position.X, Position.Y, Position.Z, 1.5f);
                 if (numberInRange < 1)
                 {
                     this.Remove();

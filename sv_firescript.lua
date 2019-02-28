@@ -10,7 +10,7 @@ end, false)
 
 RegisterCommand('stopfire', function(source, args, rawCommand)
 	TriggerClientEvent('FireScript:StopFiresAtPlayer', -1, source)
-		print("stopping fire")
+	print("stopping fire")
 end, false)
 
 RegisterCommand('stopallfires', function(source, args, rawCommand)
@@ -19,7 +19,7 @@ RegisterCommand('stopallfires', function(source, args, rawCommand)
 end, false)
 
 RegisterCommand('startsmoke', function(source, args, rawCommand)
-	TriggerClientEvent('FireScript:StartSmokeAtPlayer', -1, source, tonumber(args[2]))
+	TriggerClientEvent('FireScript:StartSmokeAtPlayer', -1, source, tonumber(args[1]))
 	print("starting smoke")
 end, false)
 
