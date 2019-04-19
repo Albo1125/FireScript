@@ -11,7 +11,6 @@ namespace FireScript
 {
     internal class Fire : BaseScript
     {
-        
 
         public int ManageFireTimer = 0;
         public Vector3 Position = Vector3.Zero;
@@ -96,14 +95,16 @@ namespace FireScript
                     if (!f.Active)
                     {
                         this.Flames.Remove(f);
+                        //Debug.WriteLine("Removed an inactive flame");
                     }
                 }
                 if (this.Flames.Count < 8)
                 {
                     this.Remove(true);
-                    //FireScript.WriteDebug("Removed fire completely!");
+                    //Debug.WriteLine("Removed fire completely - flame count under 8! " + this.Flames.Count);
                 }
-            }            
-        }
+
+            }
+        }                    
     }
 }

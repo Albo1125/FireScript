@@ -38,11 +38,12 @@ namespace FireScript
 
         public void Remove()
         {
-            API.RemoveScriptFire(FlameID);
+            Function.Call(Hash.REMOVE_SCRIPT_FIRE, FlameID);
 
-            API.StopFireInRange(Position.X, Position.Y, Position.Z, 20);
+            Function.Call(Hash.STOP_FIRE_IN_RANGE, Position.X, Position.Y, Position.Z, 20);
             FlamePTFX.RemovePTFX();
             Active = false;
+            //Debug.WriteLine("Removed flame with ID: " + FlameID);
         }
 
         public void Manage()
@@ -50,11 +51,11 @@ namespace FireScript
 
             if (FlamePTFX != null && API.DoesParticleFxLoopedExist(FlamePTFX.Handle))
             {
-                int numberInRange = API.GetNumberOfFiresInRange(Position.X, Position.Y, Position.Z, 1.5f);
+                int numberInRange = Function.Call<int>(Hash.GET_NUMBER_OF_FIRES_IN_RANGE, Position.X, Position.Y, Position.Z, 1.5f);
                 if (numberInRange < 1)
                 {
                     this.Remove();
-                    //FireScript.WriteDebug("Removed flame due to smallerthan 1.");
+                    //Debug.WriteLine("Removed flame due to smallerthan 1: " + numberInRange);
 
                 }
                 //Screen.ShowSubtitle("NumFlames: " + numberInRange);

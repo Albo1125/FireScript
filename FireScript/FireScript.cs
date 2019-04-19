@@ -67,6 +67,7 @@ namespace FireScript
                     timekeeper = DateTime.Now;
                     foreach (Fire f in ActiveFires.ToArray())
                     {
+
                         if (f.Active)
                         {
                             f.Manage();
@@ -79,6 +80,7 @@ namespace FireScript
                 }
             }
         }
+        
         private void stopFires(bool onlyNearbyFires, Vector3 pos, float distance = 35)
         {
             foreach (Fire f in ActiveFires.ToArray())
